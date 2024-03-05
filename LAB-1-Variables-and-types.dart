@@ -9,4 +9,7 @@ int c = 4;
 void main() {
   print(a + b + c);
 
+  String strr = "abcdefgh";
+  int length = strr.length;
+  print(length);
 }

@@ -1,5 +1,5 @@
 void main() {
-  int average(List lisst) {
+  int av erage(List lisst) {
     num sum = 0;
     for (int i = 0; i < lisst.length; i++) {
       sum = sum + lisst[i];

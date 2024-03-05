@@ -25,6 +25,7 @@ void main() {
       break;
 
     default:
+      print ("Invalid date!");
 
   var list = [];
 

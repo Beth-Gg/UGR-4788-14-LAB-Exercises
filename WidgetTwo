@@ -1,0 +1,87 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/widgets.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'first one',
+      theme: ThemeData.light(useMaterial3: true,
+    ),
+      home: first_one(),
+    );
+  }
+}
+
+class first_one extends StatefulWidget {
+  const first_one({super.key});
+
+  @override
+  State<first_one> createState() => _first_oneState();
+}
+
+class _first_oneState extends State<first_one> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        
+        leading: Icon(Icons.arrow_back),
+        actions: [
+          Icon(Icons.save),
+          Icon(Icons.settings)
+        ],
+        ),
+      body: 
+        Column(
+
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[ 
+            Container(
+              padding: EdgeInsets.all(20),
+              child: Icon(Icons.car_crash),
+            ), 
+
+            Column(
+
+              
+              children: <Widget> [
+                Text('1975 porshe 911 carrera'),
+                Row(
+                  children: [
+                    
+                    Icon(Icons.thumbs_up_down),
+                    Icon(Icons.comment),
+                    Icon(Icons.share),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Text('essential info', style: TextStyle(fontWeight: FontWeight.bold)),
+                    Divider(),
+                    Text('year, make, model', style: TextStyle(fontWeight: FontWeight.bold),),
+                    Text('year: 1975'),
+
+                  ],
+                )
+              ]
+              
+            ),
+          ],
+        ),
+    
+   
+    
+      
+    );
+  }
+}

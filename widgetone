@@ -1,0 +1,103 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/widgets.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'first one',
+      theme: ThemeData.light(useMaterial3: true,
+    ),
+      home: first_one(),
+    );
+  }
+}
+
+class first_one extends StatefulWidget {
+  const first_one({super.key});
+
+  @override
+  State<first_one> createState() => _first_oneState();
+}
+
+class _first_oneState extends State<first_one> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Cart'),
+        ),
+      body: 
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[ 
+            Container(
+              padding: EdgeInsets.all(20),
+              child: Row(
+              
+              children: [Icon(
+                Icons.shopping_cart,
+        
+              ),
+              Center(
+                child: Column(
+                children: [Text('shopping cart', style: TextStyle(fontWeight: FontWeight.bold),),
+                Text('verify your quantity!')
+                ]
+                )
+              )
+              ]
+            ),
+            ), 
+
+            Column(
+
+              
+              children: <Widget> [
+                ListTile(
+                  title: Text('calas'),
+                  subtitle: Text('15.00'),
+                  leading: Icon(Icons.food_bank),
+                  trailing: Icon(Icons.add),
+
+                ),
+
+                ListTile(
+                  title: Text('angel hair'),
+                  subtitle: Text('22.99'),
+                  leading: Icon(Icons.food_bank),
+                  trailing: Icon(Icons.add),
+                
+
+                ),
+              ]
+              
+            ),
+          ],
+        ),
+    bottomSheet: 
+    Container(
+      height: 100,
+      width: 500,
+      child: Column(
+      children: [
+        Text('subtotal'),
+        Text('tax'),
+        ElevatedButton( onPressed: null, child: Text('checkout')),
+        
+      ],
+    ) ,)
+    
+      
+    );
+  }
+}
